@@ -6,6 +6,8 @@ try
 {
     Console.Write("Enter valutes. For example ''btcusdt'' => ");
     var valute = Console.ReadLine().ToLower();
+    if (valute == null)
+        Console.WriteLine("Valute not found...");
     var url = $"https://api.binance.com/api/v3/exchangeInfo?symbol={valute.ToUpper()}";
     var request = WebRequest.Create(url);
     request.Method = "GET";
